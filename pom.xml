@@ -195,7 +195,7 @@ Supported protocols include: Echo, Finger, FTP, NNTP, NTP, POP3(S), SMTP(S), Tel
 
             <!-- Ekstazi Plugin -->
             <plugin>
-                <groupdId>org.ekstazi</groupId>
+                <groupId>org.ekstazi</groupId>
                 <artifactId>ekstazi-maven-plugin</artifactId>
                 <version>4.6.3</version>
                 <executions>
