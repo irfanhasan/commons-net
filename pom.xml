@@ -191,6 +191,23 @@ Supported protocols include: Echo, Finger, FTP, NNTP, NTP, POP3(S), SMTP(S), Tel
     <build>
         <pluginManagement>
           <plugins>
+
+
+            <!-- Ekstazi Plugin -->
+            <plugin>
+                <groupdId>org.ekstazi</groupId>
+                <artifactId>ekstazi-maven-plugin</artifactId>
+                <version>4.6.3</version>
+                <executions>
+                    <execution>
+                        <id>ekstazi</id>
+                        <goals>
+                            <goal>select</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <!-- Allow CLI usage -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>

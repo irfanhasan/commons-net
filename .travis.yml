@@ -1,27 +1,8 @@
-# Licensed to the Apache Software Foundation (ASF) under one or more
-# contributor license agreements.  See the NOTICE file distributed with
-# this work for additional information regarding copyright ownership.
-# The ASF licenses this file to You under the Apache License, Version 2.0
-# (the "License"); you may not use this file except in compliance with
-# the License.  You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-
 language: java
-sudo: false
-
-dist: precise
-
-jdk:
-  - openjdk6
-  - openjdk7
-  - oraclejdk8
-
+before_script:
+    - bash pull.sh
 after_success:
-  - mvn clean cobertura:cobertura coveralls:report
+    - bash push.sh
+env:
+    global:
+        - secure: "K4NKaiWE9F0L7YhARxSIDl0ObYpLY/t/zo9E++kR1hhCoA8AqMhgQWDfZI6t+c04M7VeNtYESN6jp6xrFFZeTfSkoWrLLJKmy8fOdiDQq+r3JVjXHu7of+vLvTbVo9q48Cy/hE+zxwME7qfEn2qv3551nZqhWqoQIy9wOg3UqhQEbdyk+9UhkpDXKv8sDJFUOyiSts6XQ1hhB5a7oS0LnBc4FYY/urEWoLQd6JXh4ipq0Y9NYtPeCKSZYSNZuZCcPEZgClNgBSsHDeEh6Csxc0shxT7g56iQlevzHFSzMIOOlkLAHz/hXwA47pI+89iGJW1sPRUwdksh3AZttoIB+trSi1DGqpQKMuSNHtXR5FPOfhRTSMIpouxItAxOVKKYqplJIZUsGEyRBeTilBwJNExFsVgJ0URVlcat5Zt5dP8MEctlkCmjnvLM9fPDQWNHJsX88+1z0D1lTpJosVpBEIdOgd7eBaaIll2/Z1rg9PQ7hRgUhRqF5XwXH0A5hlzDnHAwyClKsBEkRRyPdpe04JnY2xTsKgfcUvDU6S6+znGUmn/8qO+JeEDFDFj9GHs9nrPGWqgCFqAfI5vdsJA2qSlRFMZ97toC4oSIRzMEoxmRFJqLz+4ZvB3pQ4tt5B8lpFzHVN4HBlmN9opuLK09LnGovf9v2AmwBMLqZO8tg9k="

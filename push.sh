@@ -1,0 +1,24 @@
+#!/bin/sh
+
+setup_git() {
+    git config --global user.email "travis@travis-ci.org"
+    git config --global user.name "Travis CI"
+    mkdir temp
+}
+
+commit_files() {
+    cd temp
+    git init
+    cp -R ../.ekstazi/ .ekstazi/
+    git add -f .ekstazi/*
+    git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
+}
+
+upload_files() {
+    git remote add origin https://${GH_TOKEN}@github.com/irfanhasan/commons-net-cache.git 
+    git push origin master
+}
+
+setup_git
+commit_files
+upload_files
