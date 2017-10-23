@@ -1,4 +1,4 @@
 # test
 git clone https://${GH_TOKEN}@github.com/irfanhasan/commons-net-cache.git 
-cp -R travisCIcache/.ekstazi/ .ekstazi/
+cp -R commons-net-cache/.ekstazi/ .ekstazi/
 rm -rf travisCIcache
