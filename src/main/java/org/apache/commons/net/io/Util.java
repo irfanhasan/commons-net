@@ -93,6 +93,7 @@ public final class Util
                                         boolean flush)
     throws CopyStreamException
     {
+        int bytes = 0;
         int numBytes;
         long total = 0;
         byte[] buffer = new byte[bufferSize > 0 ? bufferSize : DEFAULT_COPY_BUFFER_SIZE];
