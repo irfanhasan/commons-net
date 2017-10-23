@@ -11,6 +11,7 @@ commit_files() {
     git init
     git remote add origin https://${GH_TOKEN}@github.com/irfanhasan/commons-net-cache.git 
     git pull origin master
+    rm -r .ekstazi/
     cp -R ../.ekstazi/ .ekstazi/
     git add -f .ekstazi/*
     git commit --message "Travis build: $TRAVIS_BUILD_NUMBER"
